@@ -1,0 +1,40 @@
+html
+{
+	margin: 0;
+}
+body
+{
+	background-image: url('../img/regis.jpg');
+	background-size:cover;
+	overflow-x:hidden;
+}
+.navbar
+{
+	background-color: #ecf0f1;
+}
+.container
+{
+	margin-top: 100px;
+}
+.bannerregis
+{
+	padding: 20px;
+	box-shadow: 8px 8px 5px #34495e;
+	margin-bottom: 20px;
+	font-size: 20px;
+	text-align: center;
+}
+.banner
+{
+	background-color: #ecf0f1;
+	border-radius: 100px;
+}
+.formregis
+{
+	padding: 20px;
+	box-shadow: 8px 8px 5px #34495e;
+}
+.footer
+{
+
+}
