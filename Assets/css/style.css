@@ -8,6 +8,11 @@ body
 	background-size:cover;
 	overflow-x:hidden;
 }
+.gambarslide
+{
+	width: 700px;
+	height: 200px;
+}
 .navbar
 {
 	background-color: #ecf0f1;
@@ -27,6 +32,7 @@ body
 .banner
 {
 	background-color: #ecf0f1;
+	border-radius: 100px;
 }
 .formregis
 {
