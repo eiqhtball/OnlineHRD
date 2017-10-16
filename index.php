@@ -1,6 +1,29 @@
 <?php
 include 'db_connection.php';
 $conn = OpenCon();
+
+if (isset($_POST['submit'])) {
+	// var_dump($_POST);
+	// exit;
+
+	$fullname = $_POST['fullname'];
+	$username = $_POST['username'];
+	$email = $_POST['email'];
+	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+
+
+	$result = $conn->query("INSERT INTO t_user (userID,fullname, username, email, password) VALUES (null,'$fullname','$username','$email','$password')");
+	
+	if ($result) {
+		echo '<script>alert("pendaftaran sukses!")</script>';
+	} else {
+		echo '<script>alert("pendaftaran gagal!")</script>';
+	}
+}
+
+
+
 CloseCon($conn);
 
 ?>
@@ -41,24 +64,24 @@ CloseCon($conn);
 							</p>
 						</div>
 						  	
-						<form class="formregis" style="background-color: #bdc3c7;">
+						<form class="formregis" style="background-color: #bdc3c7;" method="post">
 							<div class="form-group">
 								<label for="name">Nama Lengkap:</label>
-								<input type="name" class="form-control" id="name">
+								<input type="name" class="form-control" id="name" name="fullname">
 							</div>
 							<div class="form-group">
 								<label for="username">Username:</label>
-								<input type="username" class="form-control" id="username">
+								<input type="username" class="form-control" id="username" name="username">
 							</div>
 							<div class="form-group">
 								<label for="email">E-mail:</label>
-								<input type="email" class="form-control" id="email">
+								<input type="email" class="form-control" id="email" name="email">
 							</div>
 							<div class="form-group">
 								<label for="pwd">Password:</label>
-								<input type="password" class="form-control" id="pwd">
+								<input type="password" class="form-control" id="pwd" name="password">
 							</div>
-							<button type="submit" class="btn btn-default">Sign up</button>
+							<button type="submit" class="btn btn-default" name="submit">Sign up</button>
 						</form>
 							
 						</div>
