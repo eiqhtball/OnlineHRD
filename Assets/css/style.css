@@ -1,12 +1,13 @@
 html
 {
 	margin: 0;
+	height: 100%;
 }
 body
 {
-	background-image: url('../img/regis.jpg');
 	background-size:cover;
 	overflow-x:hidden;
+	height: 100%;
 }
 .gambarslide
 {
