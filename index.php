@@ -1,37 +1,3 @@
-<?php
-include 'db_connection.php';
-$conn = OpenCon();
-
-if (isset($_POST['submit'])) {
-	// var_dump($_POST);
-	// exit;
-
-	$fullname = $_POST['fullname'];
-	$noktp = $_POST['ktp'];
-	$username = $_POST['username'];
-	$email = $_POST['email'];
-	$gender = $_POST['gender'];
-	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-
-
-	$result = $conn->query("INSERT INTO t_user (userID, noktp,fullname, username, email, gender, password) 
-		VALUES (null, '$noktp','$fullname','$username','$email','$gender','$password')");
-
-	
-	if ($result) {
-		echo '<script>alert("pendaftaran sukses!")</script>';
-		header("Location: home.php");
-	} else {
-		echo '<script>alert("pendaftaran gagal!")</script>';
-	}
-}
-
-
-
-CloseCon($conn);
-
-?>
-
 <!DOCTYPE html>
 	<html>
 		<head>
@@ -68,7 +34,7 @@ CloseCon($conn);
 							</p>
 						</div>
 
-						<form class="formregis" style="background-color: #EEEEEE; border-radius: 10px;" method="post">
+						<form class="formregis" style="background-color: #EEEEEE; border-radius: 10px;" method="post" action="controller/index.php">
 							<div class="form-group" style="margin-bottom: 0px;">
 								<label>No.KTP:</label>
 								<input type="text" class="form-control" id="noktp" name="ktp" required>
