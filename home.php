@@ -1,3 +1,6 @@
+<?php 
+include 'Controller/home.php';
+?>
 <!DOCTYPE html>
 	<html>
 		<head>
@@ -7,16 +10,55 @@
 			<link href="Assets/css/bootstrap.min.css" rel="stylesheet">
 			<script src="Assets/js/jquery-3.2.1.min.js"></script>
 			<style type="text/css">
-				.menudashboard a
+				.menudashboard #home
 				{	
 					width: 100vh;
-					background-color: pink;
+					background-color: #4183D7;
+					border: 5px solid #E4F1FE;
 					/*margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
 					color: #f2f2f2;
+				}
+				.menudashboard #account
+				{	
+					width: 100vh;
+					background-color: #95a5a6;
+					/*margin: 0 10px;*/
+					padding: 10px 0 0 10px;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					display: inline-block;
+					color: #f2f2f2;
+				}
+				.menudashboard #test
+				{	
+					width: 100vh;
+					background-color: #7f8c8d;
+					/*margin: 0 10px;*/
+					padding: 10px 0 0 10px;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					display: inline-block;
+					color: #f2f2f2;
+				}
+				.menudashboard #logout
+				{	
+					width: 100vh;
+					background-color: #6C7A89;
+					/*margin: 0 10px;*/
+					padding: 10px 0 0 10px;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					display: inline-block;
+					color: #f2f2f2;
+				}
+				.menudashboard a:hover
+				{
+						font-weight: bold;
+						border: 1px solid #E4F1FE;
 				}
 			</style>
 		</head>
@@ -30,19 +72,26 @@
 
 					<!-- Menu Utama -->
 					<div class="menudashboard">
-						<a href="#">Home</a><br>
-						<a href="menu_Account.php">Account</a><br>
-						<a href="menu_test.php">Test</a>
+						<a id="home" href="home.php">Home</a><br>
+						<a id="account" href="menu_Account.php">Account</a><br>
+						<a id="test" href="menu_test.php">Test</a>
+						<a id="logout" href="Controller/logout.php">Logout</a>
 					</div>
-					
 				</div>
 				<!-- ini yang menampilkan dashboard -->
 				<div class="col-md-10" style="background-color: #ecf0f1; height: 100vh;">
-					<?php 
-					session_start();
-					echo $_SESSION['username'];
-					?>
-				</div>
+					<div class="isimenu">
+						<!-- Head isi -->
+						<div class="isimenu_head">
+							<h3><?php echo "User yang Login Sekarang : $ceksession";?></h3>						
+						</div>
+						<!-- Body isi -->
+						<div class="isimenu_body">  
+							
+						</div>
+					</div>
+				</div>	
 			</div>
 		</body>
 	</html>
+          

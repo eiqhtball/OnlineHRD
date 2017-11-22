@@ -1,19 +1,20 @@
 <?php 
-include 'Controller/test.php';
+include '../Controller/homeadmin.php';
  ?>
 <!DOCTYPE html>
 	<html>
 		<head>
 			<title>Home</title>
-			<link rel="stylesheet" type="text/css" href="Assets\css\font-awesome.min.css">
-			<link rel="stylesheet" type="text/css" href="Assets\css\style.css">
-			<link href="Assets/css/bootstrap.min.css" rel="stylesheet">
-			<script src="Assets/js/jquery-3.2.1.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="../Assets\css\font-awesome.min.css">
+			<link rel="stylesheet" type="text/css" href="../Assets\css\style.css">
+			<link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
+			<script src="../Assets/js/jquery-3.2.1.min.js"></script>
 			<style type="text/css">
 				.menudashboard #home
 				{	
 					width: 100vh;
 					background-color: #4183D7;
+					border: 5px solid #E4F1FE;
 					/*margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
@@ -21,22 +22,10 @@ include 'Controller/test.php';
 					display: inline-block;
 					color: #f2f2f2;
 				}
-				.menudashboard #account
+				.menudashboard #manage_soal
 				{	
 					width: 100vh;
 					background-color: #95a5a6;
-					/*margin: 0 10px;*/
-					padding: 10px 0 0 10px;
-					letter-spacing: 1px;
-					text-transform: uppercase;
-					display: inline-block;
-					color: #f2f2f2;
-				}
-				.menudashboard #test
-				{	
-					width: 100vh;
-					background-color: #7f8c8d;
-					border: 5px solid #E4F1FE;
 					/*margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
@@ -73,42 +62,24 @@ include 'Controller/test.php';
 					<!-- Menu Utama -->
 					<div class="menudashboard">
 						<a id="home" href="home.php">Home</a><br>
-						<a id="account" href="menu_Account.php">Account</a><br>
-						<a id="test" href="menu_test.php">Test</a>
+						<a id="manage_soal" href="manage_soal.php">Manage Soal</a>
 						<a id="logout" href="Controller/logout.php">Logout</a>
 					</div>
-					
 				</div>
 				<!-- ini yang menampilkan dashboard -->
 				<div class="col-md-10" style="background-color: #ecf0f1; height: 100vh;">
 					<div class="isimenu">
 						<!-- Head isi -->
 						<div class="isimenu_head">
-							<h3><?php echo "User yang Login Sekarang : $ceksession";?></h3>						
+							<h3><?php echo "User yang Login Sekarang : $ceksession";?></h3>				
 						</div>
 						<!-- Body isi -->
-						<div class="isimenu_body">
-							<form method="post" action="Controller/proses_test.php">
-								<div class="main">
-
-									<?php			
-										if ($q->num_rows) 
-										{
-											while ($row = $q->fetch_assoc()) 
-											{
-												echo "<div  class=question>
-															<p>".$row["no"].". ".$row["soal"]."</p>
-															<textarea name=answer[] placeholder=Isi sesuai dengan kata hati anda.....></textarea>
-													  </div>";
-											}
-										}			
-									?>
-										<input type="submit" name="submit" value="OK">
-								</div>
-							</form>
+						<div class="isimenu_body">  
+							
 						</div>
 					</div>
-				</div>
+				</div>	
 			</div>
 		</body>
 	</html>
+          
