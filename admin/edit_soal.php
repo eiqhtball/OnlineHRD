@@ -1,5 +1,5 @@
 <?php 
-include '../Controller/manage_soal.php';
+include '../Controller/edit_soal.php';
 require_once '../layout/headeradmin.php';
  ?>
 			<style type="text/css">
@@ -30,8 +30,7 @@ require_once '../layout/headeradmin.php';
 				.menudashboard #insert_soal
 				{	
 					width: 100vh;
-					background-color: #2ecc71;
-					border: 2px solid #E4F1FE;
+					background-color: #95a5a6;
 					/*margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
@@ -54,8 +53,7 @@ require_once '../layout/headeradmin.php';
 				.menudashboard #delete_soal
 				{	
 					width: 100vh;
-					background-color: #2ecc71;
-					border: 2px solid #E4F1FE;
+					background-color: #95a5a6;
 					/*margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
@@ -103,23 +101,23 @@ require_once '../layout/headeradmin.php';
 						</div>
 						<!-- Body isi -->
 						<div class="isimenu_body">
-							<div class="Q&A">
-								<div class="Q">
-									<h3>Soal dan Jawaban :</h3>
-									<?php					
-										if ($q->num_rows) 
-										{
-											while ($row = $q->fetch_assoc()) 
-											{
-												echo "<div class=question>
-															<p>".$row["no"].". ".$row["soal"]."<br>
-															<p style=color:red>".$row["system_answer"]."</p>
-													  </div>";
-											}
-										}
-									?>	
-								</div>										
-							</div>
+							<form style="background-color: #EEEEEE; border-radius: 10px; margin: 20px;" method="post">
+								<h2>Edit Account</h2>
+								<hr align="left">
+								<div class="form-group" style="margin-bottom: 0px;">
+									<label>Nomor Soal :</label>
+									<input type="nomor" class="form-control" id="nomor" name="nomor" required>
+								</div>
+								<div class="form-group" style="margin-bottom: 0px;">
+									<label>Soal :</label>
+									<input type="soal" class="form-control" id="soal" name="soal" required>
+								</div>
+								<div class="form-group" >
+									<label>Jawaban:</label>
+									<input type="jawaban" class="form-control" id="jawaban" name="jawaban" required>
+								</div>
+								<button type="submit" class="btn btn-primary" name="submit">Save</button><br><br>
+							</form>
 						</div>
 					</div>
 				</div>	

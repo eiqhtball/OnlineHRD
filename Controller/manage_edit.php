@@ -13,7 +13,7 @@ $email = $_POST['email'];
 $gender = $_POST['gender'];
 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-$edit = mysqli_query($conn, "UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' WHERE username = '$useredit'");
+$edit = mysqli_query($conn, "UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' ");
 
 if ($edit) {
 		echo '<script>alert("Edit sukses!")</script>';

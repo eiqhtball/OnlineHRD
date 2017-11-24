@@ -2,29 +2,27 @@
 include 'configdb.php';
 
 session_start();
-$ceksession = $_SESSION['username'];
-$tampil = mysqli_query($conn, "select * from t_user where username='$ceksession'");
-$fetch = mysqli_fetch_assoc($tampil);
-$useredit = (string)$fetch['username'];
 
 if (isset($_POST['submit'])) {
-$fullname = $_POST['fullname'];
-$email = $_POST['email'];
-$gender = $_POST['gender'];
-$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+$no = (string)$nomor = $_POST['nomor'];
+$soal = $_POST['soal'];
+$jawaban = $_POST['jawaban'];
 
-$edit = mysqli_query($conn, "UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' WHERE username = '$useredit'");
+$edit = mysqli_query($conn, "UPDATE t_user SET soal = '$soal', system_answer = '$jawaban' WHERE no = $no");
+var_dump($edit);
+exit;
+
 
 if ($edit) {
 		echo '<script>alert("Edit sukses!")</script>';
-		header("Location: ../menu_account.php");
+		header("Location: ../admin/edit_soal.php");
 	} else {
 		echo '<script>alert("Edit gagal!")</script>';
 	}
 }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title>Edit Account</title>
@@ -56,11 +54,11 @@ if ($edit) {
 			<hr align="left">
 			<div class="form-group" style="margin-bottom: 0px;">
 				<label>No.KTP:</label>
-				<p><?php echo $fetch['noktp'];?> </p>
+				<p> </p>
 			</div>
 			<div class="form-group" style="margin-bottom: 0px;">
 				<label>Username:</label>
-				<p><?php echo $fetch['username'];?> </p>
+				<p> </p>
 			</div>
 			<div class="form-group" style="margin-bottom: 0px;">
 				<label>Nama Lengkap:</label>
@@ -83,4 +81,4 @@ if ($edit) {
 		</form>
 	</div>
 </body>
-</html>
+</html> -->

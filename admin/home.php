@@ -1,14 +1,7 @@
 <?php 
 include '../Controller/homeadmin.php';
+require_once '../layout/headeradmin.php';
  ?>
-<!DOCTYPE html>
-	<html>
-		<head>
-			<title>Home</title>
-			<link rel="stylesheet" type="text/css" href="../Assets\css\font-awesome.min.css">
-			<link rel="stylesheet" type="text/css" href="../Assets\css\style.css">
-			<link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
-			<script src="../Assets/js/jquery-3.2.1.min.js"></script>
 			<style type="text/css">
 				.menudashboard #home
 				{	
@@ -63,7 +56,7 @@ include '../Controller/homeadmin.php';
 					<div class="menudashboard">
 						<a id="home" href="home.php">Home</a><br>
 						<a id="manage_soal" href="manage_soal.php">Manage Soal</a>
-						<a id="logout" href="Controller/logout.php">Logout</a>
+						<a id="logout" href="../Controller/logoutadmin.php">Logout</a>
 					</div>
 				</div>
 				<!-- ini yang menampilkan dashboard -->

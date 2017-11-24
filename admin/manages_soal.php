@@ -15,47 +15,10 @@ require_once '../layout/headeradmin.php';
 					color: #f2f2f2;
 				}
 				.menudashboard #manage_soal
-				{	
+								{	
 					width: 100vh;
 					background-color: #4183D7;
 					border: 5px solid #E4F1FE;
-					/*margin: 0 10px;*/
-					padding: 10px 0 0 10px;
-					letter-spacing: 1px;
-					text-transform: uppercase;
-					display: inline-block;
-					color: #f2f2f2;
-				}
-
-				.menudashboard #insert_soal
-				{	
-					width: 100vh;
-					background-color: #2ecc71;
-					border: 2px solid #E4F1FE;
-					/*margin: 0 10px;*/
-					padding: 10px 0 0 10px;
-					letter-spacing: 1px;
-					text-transform: uppercase;
-					display: inline-block;
-					color: #f2f2f2;
-				}
-				.menudashboard #edit_soal
-				{	
-					width: 100vh;
-					background-color: #2ecc71;
-					border: 2px solid #E4F1FE;
-					/*margin: 0 10px;*/
-					padding: 10px 0 0 10px;
-					letter-spacing: 1px;
-					text-transform: uppercase;
-					display: inline-block;
-					color: #f2f2f2;
-				}
-				.menudashboard #delete_soal
-				{	
-					width: 100vh;
-					background-color: #2ecc71;
-					border: 2px solid #E4F1FE;
 					/*margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
@@ -91,7 +54,9 @@ require_once '../layout/headeradmin.php';
 
 					<!-- Menu Utama -->
 					<div class="menudashboard">
-						<?php require_once '../layout/menuadmin.php'; ?>
+						<a id="home" href="home.php">Home</a><br>
+						<a id="manage_soal" href="manage/update_soal.php">Manage Soal</a>
+						<a id="logout" href="../Controller/logoutadmin.php">Logout</a>
 					</div>
 				</div>
 				<!-- ini yang menampilkan dashboard -->
@@ -103,26 +68,45 @@ require_once '../layout/headeradmin.php';
 						</div>
 						<!-- Body isi -->
 						<div class="isimenu_body">
-							<div class="Q&A">
-								<div class="Q">
-									<h3>Soal dan Jawaban :</h3>
-									<?php					
-										if ($q->num_rows) 
-										{
-											while ($row = $q->fetch_assoc()) 
+							<h3 class="login-header">
+								Admin
+							</h3>
+							<form method="post" action="../Controller/manage_soal.php" class="formsoal">
+								<h4>Upload Soal</h4>  
+								<div class="form-group">
+									<label>Soal : </label>
+									<input type="soal" placeholder="Soal" class="form-control" id="soal" name="soal" required>
+								</div>
+								<div class="form-group" >
+									<label>Jawaban : </label>
+									<input type="jawaban" placeholder="Jawaban" class="form-control" id="jawaban" name="jawaban" required>
+								</div>
+								<div class="form-group">
+									<button class="btn btn-primary" name="submit">Submit</button>
+								</div>
+								
+								<div class="Q&A">
+									<div class="Q">
+										<h2>Soal dan Jawaban :</h2>
+										<?php					
+											if ($q->num_rows) 
 											{
-												echo "<div class=question>
-															<p>".$row["no"].". ".$row["soal"]."<br>
-															<p style=color:red>".$row["system_answer"]."</p>
-													  </div>";
+												while ($row = $q->fetch_assoc()) 
+												{
+													echo "<div class=question>
+																<p>".$row["no"].". ".$row["soal"]."<br>
+																<p style=color:red>".$row["system_answer"]."</p>
+														  </div>";
+												}
 											}
-										}
-									?>	
-								</div>										
-							</div>
+										?>	
+									</div>										
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>	
 			</div>
 		</body>
 	</html>
+          

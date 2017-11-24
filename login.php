@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Nama Perusahaan</title>
-	<link rel="stylesheet" type="text/css" href="Assets\css\font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="Assets\css\style.css">
-	<link href="Assets/css/bootstrap.min.css" rel="stylesheet">
-	<script src="Assets/js/jquery-3.2.1.min.js"></script>
+<?php require_once 'layout/header.php'; ?>
 </head>
 <body style="background-image: url('assets/img/bg-1.jpg');">
 	<div class="row">

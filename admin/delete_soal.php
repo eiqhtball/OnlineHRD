@@ -2,6 +2,7 @@
 include '../Controller/manage_soal.php';
 require_once '../layout/headeradmin.php';
  ?>
+
 			<style type="text/css">
 				.menudashboard #home
 				{	
@@ -30,8 +31,7 @@ require_once '../layout/headeradmin.php';
 				.menudashboard #insert_soal
 				{	
 					width: 100vh;
-					background-color: #2ecc71;
-					border: 2px solid #E4F1FE;
+					background-color: #95a5a6;
 					/*margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
@@ -42,8 +42,7 @@ require_once '../layout/headeradmin.php';
 				.menudashboard #edit_soal
 				{	
 					width: 100vh;
-					background-color: #2ecc71;
-					border: 2px solid #E4F1FE;
+					background-color: #95a5a6;
 					/*margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
@@ -103,6 +102,7 @@ require_once '../layout/headeradmin.php';
 						</div>
 						<!-- Body isi -->
 						<div class="isimenu_body">
+							
 							<div class="Q&A">
 								<div class="Q">
 									<h3>Soal dan Jawaban :</h3>
