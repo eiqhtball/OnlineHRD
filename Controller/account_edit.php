@@ -1,10 +1,13 @@
 <?php 
 include 'configdb.php';
+require_once '../core/sessionuser.php';
 
-session_start();
 $ceksession = $_SESSION['username'];
-$tampil = mysqli_query($conn, "select * from t_user where username='$ceksession'");
-$fetch = mysqli_fetch_assoc($tampil);
+// $tampil = mysqli_query($conn, "select * from t_user where username='$ceksession'");
+// $fetch = mysqli_fetch_assoc($tampil);
+// $tampil = $conn->query("SELECT * FROM t_user WHERE username='$ceksession'");
+// $fetch = $tampil->fetch_assoc();
+$fetch = $conn->query("SELECT * FROM t_user WHERE username='$ceksession'")->fetch_assoc();
 $useredit = (string)$fetch['username'];
 
 if (isset($_POST['submit'])) {
@@ -13,7 +16,8 @@ $email = $_POST['email'];
 $gender = $_POST['gender'];
 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-$edit = mysqli_query($conn, "UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' WHERE username = '$useredit'");
+// $edit = mysqli_query($conn, "UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' WHERE username = '$useredit'");
+$edit = $conn->query("UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' WHERE username = '$useredit'");
 
 if ($edit) {
 		echo '<script>alert("Edit sukses!")</script>';
@@ -64,11 +68,11 @@ if ($edit) {
 			</div>
 			<div class="form-group" style="margin-bottom: 0px;">
 				<label>Nama Lengkap:</label>
-				<input type="name" class="form-control" id="name" name="fullname" required>
+				<input type="name" class="form-control" id="name" name="fullname" required value="<?php echo $fetch['fullname']?>">
 			</div>
 			<div class="form-group" style="margin-bottom: 0px;">
 				<label>E-mail:</label>
-				<input type="email" class="form-control" id="email" name="email" required>
+				<input type="email" class="form-control" id="email" name="email" required value="<?php echo $fetch['email']?>">
 			</div>
 			<div class="form-group" name="gender" style="margin-bottom: 0px;" >
 				<label>Gender</label><br>

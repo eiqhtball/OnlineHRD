@@ -18,8 +18,8 @@ require_once '../layout/headeradmin.php';
 				{	
 					width: 100vh;
 					background-color: #4183D7;
-					border: 5px solid #E4F1FE;
-					/*margin: 0 10px;*/
+					/*border: 5px solid #E4F1FE;
+					margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
@@ -30,52 +30,74 @@ require_once '../layout/headeradmin.php';
 				.menudashboard #insert_soal
 				{	
 					width: 100vh;
-					background-color: #95a5a6;
-					/*margin: 0 10px;*/
+					/*background-color: #95a5a6;
+					margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
 					color: #f2f2f2;
+				}
+				#insert_soal:hover{
+					padding-left: 20px;
 				}
 				.menudashboard #edit_soal
 				{	
 					width: 100vh;
-					background-color: #2ecc71;
+					/*background-color: #2ecc71;
 					border: 2px solid #E4F1FE;
-					/*margin: 0 10px;*/
+					margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
 					color: #f2f2f2;
+					padding-left: 20px;
 				}
 				.menudashboard #delete_soal
 				{	
 					width: 100vh;
-					background-color: #95a5a6;
-					/*margin: 0 10px;*/
+					/*background-color: #95a5a6;
+					margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
 					color: #f2f2f2;
 				}
+				#delete_soal:hover{
+					padding-left: 20px;
+				}
 				.menudashboard #logout
 				{	
-					width: 100vh;
+					/*width: 100vh;
 					background-color: #6C7A89;
-					/*margin: 0 10px;*/
+					margin: 0 10px;
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
+					color: #f2f2f2;*/
+					width: 100vh;
+					background-color: #e74c3c;
+					/*margin: 0 10px;*/
+					padding: 10px 0 10px 10px;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					display: inline-block;
 					color: #f2f2f2;
+					margin-top: 280px;
+				}
+				#logout:hover{
+					background-color: #EF6E5B;
 				}
 				.menudashboard a:hover
 				{
 						font-weight: bold;
-						border: 1px solid #E4F1FE;
+						/*border: 1px solid #E4F1FE;*/
+				}
+				a:hover{
+					text-decoration: none;
 				}
 			</style>
 		</head>
@@ -101,8 +123,8 @@ require_once '../layout/headeradmin.php';
 						</div>
 						<!-- Body isi -->
 						<div class="isimenu_body">
-							<form style="background-color: #EEEEEE; border-radius: 10px; margin: 20px;" method="post">
-								<h2>Edit Account</h2>
+							<form style="background-color: #EEEEEE; border-radius: 10px; margin: 20px; height: 100vh" method="post">
+								<h2>Edit Soal</h2>
 								<hr align="left">
 								<div class="form-group" style="margin-bottom: 0px;">
 									<label>Nomor Soal :</label>

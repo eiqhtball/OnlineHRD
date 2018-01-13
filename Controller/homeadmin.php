@@ -1,5 +1,4 @@
 <?php 
-session_start();
-$ceksession = $_SESSION['username'];
+require_once '../core/sessionadmin.php';
 
  ?>

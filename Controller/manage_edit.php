@@ -1,10 +1,14 @@
 <?php 
 include 'configdb.php';
+require_once '../core/sessionadmin.php';
 
 session_start();
 $ceksession = $_SESSION['username'];
-$tampil = mysqli_query($conn, "select * from t_user where username='$ceksession'");
-$fetch = mysqli_fetch_assoc($tampil);
+// $tampil = mysqli_query($conn, "select * from t_user where username='$ceksession'");
+// $fetch = mysqli_fetch_assoc($tampil);
+// $tampil = $conn->query("SELECT * FROM t_user WHERE username='$ceksession'");
+// $fetch = $tampil->fetch_assoc();
+$fetch = $conn->query("SELECT * FROM t_user WHERE username='$ceksession'")->fetch_assoc();
 $useredit = (string)$fetch['username'];
 
 if (isset($_POST['submit'])) {
@@ -13,7 +17,8 @@ $email = $_POST['email'];
 $gender = $_POST['gender'];
 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-$edit = mysqli_query($conn, "UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' ");
+//$edit = mysqli_query($conn, "UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' ");
+$edit = $conn->query("UPDATE t_user SET fullname = '$fullname', email = '$email', gender = '$gender', password = '$password' ");
 
 if ($edit) {
 		echo '<script>alert("Edit sukses!")</script>';

@@ -6,20 +6,23 @@ require_once '../layout/headeradmin.php';
 				.menudashboard #home
 				{	
 					width: 100vh;
-					background-color: #95a5a6;
-					/*margin: 0 10px;*/
-					padding: 10px 0 0 10px;
+					background-color: #6C7A89;
+					/*margin: 0 10px;
+					padding: 10px 0 0 10px;*/
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
 					color: #f2f2f2;
 				}
+				#home:hover{
+					padding-left: 20px;
+				}
 				.menudashboard #manage_soal
 				{	
 					width: 100vh;
 					background-color: #4183D7;
-					border: 5px solid #E4F1FE;
-					/*margin: 0 10px;*/
+					/*border: 5px solid #E4F1FE;
+					margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
@@ -30,54 +33,78 @@ require_once '../layout/headeradmin.php';
 				.menudashboard #insert_soal
 				{	
 					width: 100vh;
-					background-color: #2ecc71;
+					/*background-color: #908C8C;
 					border: 2px solid #E4F1FE;
-					/*margin: 0 10px;*/
+					margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
 					color: #f2f2f2;
+				}
+				#insert_soal:hover{
+					padding-left: 20px;
 				}
 				.menudashboard #edit_soal
 				{	
 					width: 100vh;
-					background-color: #2ecc71;
+					/*background-color: #908C8C;
 					border: 2px solid #E4F1FE;
-					/*margin: 0 10px;*/
+					margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
 					color: #f2f2f2;
+				}
+				#edit_soal:hover{
+					padding-left: 20px;
 				}
 				.menudashboard #delete_soal
 				{	
 					width: 100vh;
-					background-color: #2ecc71;
+					/*background-color: #908C8C;
 					border: 2px solid #E4F1FE;
-					/*margin: 0 10px;*/
+					margin: 0 10px;*/
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
 					color: #f2f2f2;
 				}
+				#delete_soal:hover{
+					padding-left: 20px;
+				}
 				.menudashboard #logout
 				{	
-					width: 100vh;
+					/*width: 100vh;
 					background-color: #6C7A89;
-					/*margin: 0 10px;*/
+					margin: 0 10px;
 					padding: 10px 0 0 10px;
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					display: inline-block;
+					color: #f2f2f2;*/
+					width: 100vh;
+					background-color: #e74c3c;
+					/*margin: 0 10px;*/
+					padding: 10px 0 10px 10px;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					display: inline-block;
 					color: #f2f2f2;
+					margin-top: 280px;
+				}
+				#logout:hover{
+					background-color: #EF6E5B;
 				}
 				.menudashboard a:hover
 				{
 						font-weight: bold;
-						border: 1px solid #E4F1FE;
+						/*border: 1px solid #E4F1FE;*/
+				}
+				a:hover{
+					text-decoration: none;
 				}
 			</style>
 		</head>
@@ -113,7 +140,7 @@ require_once '../layout/headeradmin.php';
 											{
 												echo "<div class=question>
 															<p>".$row["no"].". ".$row["soal"]."<br>
-															<p style=color:red>".$row["system_answer"]."</p>
+															<p style=color:red>JAWAB : ".$row["system_answer"]."</p>
 													  </div>";
 											}
 										}

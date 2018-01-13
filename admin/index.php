@@ -22,7 +22,7 @@
 
 				<button type="submit" class="btn btn-primary" name="submit">Login</button><br><br>
 				
-				Don't have an account? <a href="index.php">Sign Up Here</a> 
+				<!-- Don't have an account? <a href="index.php">Sign Up Here</a> --> 
 			</form>
 		</div>
 		<div class="col-md-4">

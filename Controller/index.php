@@ -12,10 +12,8 @@ if (isset($_POST['submit'])) {
 	$gender = $_POST['gender'];
 	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-
 	$result = $conn->query("INSERT INTO t_user (userID, noktp,fullname, username, email, gender, password) 
-		VALUES (null, '$noktp','$fullname','$username','$email','$gender','$password')");
-
+							VALUES (null, '$noktp','$fullname','$username','$email','$gender','$password')");
 	
 	if ($result) {
 		session_start();

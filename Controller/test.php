@@ -1,12 +1,12 @@
 <?php 
 include 'configdb.php';
-session_start();
+require_once 'core/sessionuser.php';
 $html=file_get_contents('../hrd/home.php');
 $ceksession = $_SESSION['username'];
 
-if (!isset($ceksession)) {
-	header('location: login.php');
-}
-$soal = "SELECT * FROM t_soal";
-$q = $conn->query($soal);
+$result = $conn->query("SELECT result FROM t_user WHERE username = '$ceksession'");
+$fetch = $result->fetch_assoc();
+$r = $fetch['result'];
+
+$q = $conn->query("SELECT * FROM t_soal");
 

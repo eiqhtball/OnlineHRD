@@ -1,8 +1,7 @@
 <?php 
 	//include '../Controller/homeadmin.php';
-	include 'configdb.php';
 	require_once '../core/sessionadmin.php';
-
+	include 'configdb.php';
 	//$soal = "SELECT * FROM t_soal";
 	//$jawaban = "SELECT * FROM t_system_answer";
 	//$ans = $conn->query($jawaban);
@@ -11,8 +10,9 @@
 	if (isset($_POST['submit'])) 
 	{
 		$question = $_POST['soal'];
-		//$system_answer = $_POST['jawaban'];
+		$system_answer = $_POST['jawaban'];
 
+		//$questionQuery = mysqli_query($conn, "INSERT INTO t_soal(no, soal, system_answer) VALUES (null, '$question', '$system_answer')");
 		$questionQuery = $conn->query("INSERT INTO t_soal(no, soal, system_answer) VALUES (null, '$question', '$system_answer')");
 		//$system_answerQuery = mysqli_query($conn, "INSERT INTO t_system_answer(no, system_answer) VALUES (null, '$system_answer')");
 

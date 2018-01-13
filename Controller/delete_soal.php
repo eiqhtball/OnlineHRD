@@ -4,11 +4,9 @@ require_once '../core/sessionadmin.php';
 
 if (isset($_POST['submit'])) {
 $no = (string)$nomor = $_POST['nomor'];
-$soal = $_POST['soal'];
-$jawaban = $_POST['jawaban'];
 
-//$edit = mysqli_query($conn, "UPDATE t_soal SET soal = '$soal', system_answer = '$jawaban' WHERE no = $no");
-$edit = $conn->query("UPDATE t_soal SET soal = '$soal', system_answer = '$jawaban' WHERE no = $no");
+//$edit = mysqli_query($conn, "DELETE FROM t_soal WHERE no = $no");
+$edit = $conn->query("DELETE FROM t_soal WHERE no = $no");
 
 if ($edit) {
 		echo '<script>alert("Edit sukses!")</script>';
